@@ -1,0 +1,194 @@
+:root {
+  --paper: #f3f0e8;
+  --paper-2: #ebe6da;
+  --card: #fbfaf6;
+  --ink: #17150f;
+  --ink-2: #3a362c;
+  --muted: #6f6858;
+  --faint: #a39b88;
+  --line: #d8d1c0;
+  --line-2: #e6e0d2;
+  --ok: #1f6b4a;
+  --ok-soft: #dcecdf;
+  --warn: #a8620a;
+  --warn-soft: #f6e6c8;
+  --bad: #b2321b;
+  --bad-soft: #f7dcd4;
+  --accent: #17150f;
+  --accent-soft: #e6e0d2;
+
+  --serif: 'Instrument Serif', 'Times New Roman', serif;
+  --sans: 'Geist', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mono: 'Geist Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  --r: 10px;
+  --r-lg: 18px;
+  --shadow: 0 1px 0 rgba(23, 21, 15, 0.04), 0 8px 24px -12px rgba(23, 21, 15, 0.18);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font: 15px/1.5 var(--sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+button, input, select, textarea { font: inherit; color: inherit; }
+::selection { background: var(--accent); color: #fff; }
+
+h1, h2, h3, h4 { margin: 0; font-weight: 400; }
+p { margin: 0; }
+
+.serif { font-family: var(--serif); font-weight: 400; letter-spacing: -0.01em; }
+.mono { font-family: var(--mono); font-size: 12px; letter-spacing: 0.02em; }
+.label {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+.muted { color: var(--muted); }
+.faint { color: var(--faint); }
+em.hl { font-style: italic; color: var(--accent); }
+
+/* --------- butonlar --------- */
+.btn {
+  appearance: none;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: var(--r);
+  padding: 10px 16px;
+  font-weight: 500;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.12s ease, background 0.15s, box-shadow 0.15s;
+  white-space: nowrap;
+}
+.btn:hover { transform: translateY(-1px); box-shadow: 0 4px 0 -1px rgba(0, 0, 0, 0.12); }
+.btn:active { transform: none; box-shadow: none; }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; transform: none; box-shadow: none; }
+.btn.ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+.btn.ghost:hover { border-color: var(--ink); }
+.btn.accent { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn.sm { padding: 6px 11px; font-size: 13px; border-radius: 8px; }
+.btn.lg { padding: 15px 22px; font-size: 16px; border-radius: 12px; }
+.btn.block { width: 100%; justify-content: center; }
+.btn.danger { background: transparent; color: var(--bad); border-color: var(--bad-soft); }
+.linkbtn { background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; color: var(--ink-2); }
+
+/* --------- form --------- */
+.field { display: grid; gap: 6px; }
+.field > span { font-size: 12.5px; color: var(--ink-2); font-weight: 500; }
+.field small { color: var(--muted); font-size: 12px; }
+.input, .select, .textarea {
+  width: 100%;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 10px 12px;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.textarea { resize: vertical; min-height: 84px; line-height: 1.5; }
+.input:focus, .select:focus, .textarea:focus { border-color: var(--ink); box-shadow: 0 0 0 3px rgba(23, 21, 15, 0.08); }
+.row { display: flex; gap: 12px; align-items: center; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+@media (max-width: 720px) { .grid2, .grid3 { grid-template-columns: 1fr; } }
+.check { display: flex; gap: 10px; align-items: flex-start; font-size: 13.5px; cursor: pointer; }
+.check input { margin-top: 3px; accent-color: var(--ink); }
+
+/* --------- rozetler --------- */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font: 500 11.5px/1 var(--mono);
+  padding: 5px 8px;
+  border-radius: 6px;
+  background: var(--paper-2);
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+.tag.ok { background: var(--ok-soft); color: var(--ok); }
+.tag.warn { background: var(--warn-soft); color: var(--warn); }
+.tag.bad { background: var(--bad-soft); color: var(--bad); }
+.tag.ink { background: var(--ink); color: var(--paper); }
+.dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; display: inline-block; }
+
+/* --------- kart --------- */
+.card { background: var(--card); border: 1px solid var(--line-2); border-radius: var(--r-lg); }
+.card.pad { padding: 20px; }
+.hr { height: 1px; background: var(--line); border: 0; margin: 0; }
+
+/* --------- img fallback --------- */
+.imgbox { position: relative; overflow: hidden; background: var(--paper-2); }
+.imgbox > img { width: 100%; height: 100%; object-fit: cover; }
+.imgbox .ph {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--serif);
+  font-size: 28px;
+  color: var(--ink-2);
+  background:
+    repeating-linear-gradient(135deg, transparent 0 9px, rgba(23, 21, 15, 0.05) 9px 10px),
+    var(--paper-2);
+}
+
+.avatar { border-radius: 50%; flex: none; }
+
+/* --------- tablo --------- */
+.table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.table th {
+  text-align: left;
+  font: 500 11px var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+.table td { padding: 12px; border-bottom: 1px solid var(--line-2); vertical-align: middle; }
+.table tr:last-child td { border-bottom: 0; }
+.table tbody tr { transition: background 0.1s; }
+.table tbody tr:hover { background: rgba(23, 21, 15, 0.025); }
+.table .num { text-align: right; font-variant-numeric: tabular-nums; }
+.tablewrap { overflow-x: auto; }
+
+/* --------- toast --------- */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  background: var(--ink);
+  color: var(--paper);
+  padding: 11px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  z-index: 99;
+  box-shadow: var(--shadow);
+  animation: rise 0.25s ease;
+}
+@keyframes rise { from { opacity: 0; transform: translate(-50%, 8px); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+.spin { width: 14px; height: 14px; border: 2px solid currentColor; border-right-color: transparent; border-radius: 50%; animation: spin 0.7s linear infinite; display: inline-block; }
+
+.progress { height: 4px; background: var(--line-2); border-radius: 4px; overflow: hidden; }
+.progress > i { display: block; height: 100%; background: var(--accent); border-radius: 4px; transition: width 0.4s; }
+
+.empty { padding: 40px 20px; text-align: center; color: var(--muted); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
