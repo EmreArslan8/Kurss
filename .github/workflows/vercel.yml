@@ -1,0 +1,31 @@
+name: Vercel deploy
+
+on:
+  push:
+    branches: [main, claude/funny-sagan-e4itka]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Token kontrolü
+        run: |
+          if [ -z "$VERCEL_TOKEN" ]; then
+            echo "::error::VERCEL_TOKEN secret'ı eksik. Repo → Settings → Secrets and variables → Actions → New repository secret"
+            exit 1
+          fi
+      - name: Build kontrolü
+        run: npm ci && npm run build
+      - name: Vercel'e deploy
+        id: deploy
+        run: |
+          URL=$(npx --yes vercel@39.1.1 deploy --prod --yes --token="$VERCEL_TOKEN" ${{ secrets.VERCEL_SCOPE && format('--scope={0}', secrets.VERCEL_SCOPE) || '' }})
+          echo "url=$URL" >> "$GITHUB_OUTPUT"
+          echo "### Yayında: $URL" >> "$GITHUB_STEP_SUMMARY"
