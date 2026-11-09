@@ -30,7 +30,7 @@ export function StudentHome() {
 
   return (
     <>
-      <PageHead kicker={new Intl.DateTimeFormat('tr-TR', { weekday: 'long', day: 'numeric', month: 'long' }).format(new Date())} title={<>Merhaba {me!.name.split(' ')[0]}, <em>kaldığın yerden.</em></>} />
+      <PageHead kicker={new Intl.DateTimeFormat('tr-TR', { weekday: 'long', day: 'numeric', month: 'long' }).format(new Date())} title={<>Merhaba {me!.name.split(' ')[0]}, kaldığın yerden.</>} />
 
       {current && (
         <Link to={`/ogrenci/kurs/${current.id}/${next(current).id}`} className="continue" style={brandStyle(state.brands.find((b) => b.id === current.brandId)!)}>

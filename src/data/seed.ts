@@ -26,7 +26,7 @@ const brands: Brand[] = [
     taxNo: '2910384471',
     landing: {
       eyebrow: 'Sıfırdan · 9 hafta · Logo & Excel uygulamalı',
-      headline: 'Muhasebeyi ezberleyerek değil, *fiş keserek* öğren.',
+      headline: 'Muhasebeyi ezberleyerek değil, fiş keserek öğren.',
       subheadline:
         'Gerçek bir şirketin 3 aylık evrakını baştan sona işliyorsun. Kursun sonunda elinde bir mizan, bir beyanname taslağı ve iş görüşmesinde gösterebileceğin bir dosya oluyor.',
       vslUrl: video.a,
@@ -75,7 +75,7 @@ const brands: Brand[] = [
     taxNo: '2910384471',
     landing: {
       eyebrow: 'Mobil çekim & kurgu · 6 hafta',
-      headline: 'Cebindeki telefon, *ilk kameran* olsun.',
+      headline: 'Cebindeki telefon, ilk kameran olsun.',
       subheadline:
         'Işık, ses, kadraj ve kurgu. Pahalı ekipman almadan; markalar için reklam, kendin için içerik üretmeyi öğren. Her bölümün sonunda bir çekim ödevi var.',
       vslUrl: video.a,
@@ -120,7 +120,7 @@ const brands: Brand[] = [
     taxNo: '2910384471',
     landing: {
       eyebrow: 'Yakında · ön kayıt açık',
-      headline: 'Maaş gününden *sonraki* gün için bir plan.',
+      headline: 'Maaş gününden sonraki gün için bir plan.',
       subheadline: 'Bütçe, borç, birikim ve ilk yatırım. Uygulama tabloları ve haftalık görevlerle 30 günde paranla aranı düzelt.',
       vslUrl: video.a,
       vslPoster: img.coins,

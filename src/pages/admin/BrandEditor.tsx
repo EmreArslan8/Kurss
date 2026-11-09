@@ -67,7 +67,7 @@ export default function BrandEditor() {
             <>
               <Blk title="1 · Başlık alanı">
                 <F label="Üst etiket"><input className="input" value={L.eyebrow} onChange={(e) => setL((l) => void (l.eyebrow = e.target.value))} /></F>
-                <F label="Headline" hint="*yıldız arasındaki* kelimeler marka renginde italik görünür">
+                <F label="Headline">
                   <textarea className="textarea" style={{ minHeight: 64 }} value={L.headline} onChange={(e) => setL((l) => void (l.headline = e.target.value))} />
                 </F>
                 <F label="Sub-headline"><textarea className="textarea" value={L.subheadline} onChange={(e) => setL((l) => void (l.subheadline = e.target.value))} /></F>

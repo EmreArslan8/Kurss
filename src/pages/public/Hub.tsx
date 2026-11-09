@@ -45,7 +45,7 @@ export default function Hub() {
         <p className="label">Defter · Kadraj · Kumbara — tek hesapla</p>
         <h1>
           Diploma değil, <br />
-          <em>iş çıkaran</em> bir dosya.
+          iş çıkaran bir dosya.
         </h1>
         <div className="home-hero-foot">
           <p>
@@ -78,7 +78,7 @@ export default function Hub() {
 
       <section id="nasil" className="home-how">
         <h2>
-          Bir ders <em>nasıl</em> geçer?
+          Bir ders nasıl geçer?
         </h2>
         <ol>
           <li>
@@ -131,7 +131,7 @@ export default function Hub() {
       <footer className="home-foot">
         <div className="home-foot-cta">
           <h2>
-            Bugün başla, <em>bu ay</em> bitir.
+            Bugün başla, bu ay bitir.
           </h2>
           <a href="#programlar" className="btn lg">
             Program seç <Icon name="arrow" />

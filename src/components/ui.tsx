@@ -45,22 +45,9 @@ export function Avatar({ src, name, size = 32 }: { src?: string; name: string; s
   return <img className="avatar" src={src} alt={name} width={size} height={size} style={{ width: size, height: size, objectFit: 'cover' }} onError={() => setBad(true)} />
 }
 
-/* "*vurgu*" sözdizimini italik vurguya çevirir — panelden kodsuz düzenleme için */
+/* Panelden girilen metni düz yazı olarak basar (eski *yıldız* işaretleri temizlenir) */
 export function Rich({ text }: { text: string }) {
-  const parts = text.split(/(\*[^*]+\*)/g)
-  return (
-    <>
-      {parts.map((p, i) =>
-        p.startsWith('*') && p.endsWith('*') ? (
-          <em key={i} className="hl">
-            {p.slice(1, -1)}
-          </em>
-        ) : (
-          <span key={i}>{p}</span>
-        ),
-      )}
-    </>
-  )
+  return <>{text.replace(/\*/g, '')}</>
 }
 
 export function BrandMark({ brand, size = 30 }: { brand: Pick<Brand, 'monogram' | 'accent' | 'name'>; size?: number }) {
@@ -75,11 +62,11 @@ export function BrandMark({ brand, size = 30 }: { brand: Pick<Brand, 'monogram' 
         color: '#fff',
         display: 'inline-grid',
         placeItems: 'center',
-        fontFamily: 'var(--serif)',
-        fontSize: size * (brand.monogram.length > 1 ? 0.5 : 0.66),
+        fontSize: size * (brand.monogram.length > 1 ? 0.42 : 0.52),
         lineHeight: 1,
         flex: 'none',
-        fontStyle: 'italic',
+        fontWeight: 600,
+        fontFamily: 'var(--sans)',
       }}
     >
       {brand.monogram}

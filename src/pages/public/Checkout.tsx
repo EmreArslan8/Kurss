@@ -187,7 +187,7 @@ export function CheckoutSuccess() {
       <div className="success">
         <span className="tag ok"><Icon name="check" size={13} /> ödeme alındı</span>
         <h1>
-          Hoş geldin, <em>{order.buyer.name.split(' ')[0]}.</em>
+          Hoş geldin, {order.buyer.name.split(' ')[0]}.
         </h1>
         <p className="muted" style={{ fontSize: 17 }}>
           <b style={{ color: 'var(--ink)' }}>{pkg.title}</b> hesabına tanımlandı. Faturan <b style={{ color: 'var(--ink)' }}>{order.buyer.email}</b> adresine gönderildi.

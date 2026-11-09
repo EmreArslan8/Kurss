@@ -27,7 +27,6 @@
 .lp-hero .eyebrow { display: inline-flex; gap: 10px; align-items: center; margin-bottom: 22px; }
 .lp-hero .eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--ink); }
 .lp-hero h1 { font-family: var(--serif); font-size: clamp(44px, 7.4vw, 104px); line-height: 0.94; letter-spacing: -0.025em; }
-.lp-hero h1 em { font-style: italic; color: var(--accent); }
 .lp-hero .note { border-left: 1px solid var(--line); padding-left: 22px; display: grid; gap: 20px; }
 .lp-hero .note p { font-size: 17px; line-height: 1.55; color: var(--ink-2); }
 .lp-hero .stats { display: flex; gap: 26px; flex-wrap: wrap; }
@@ -54,7 +53,7 @@
   display: grid;
   place-items: center;
   text-align: center;
-  font: italic 19px/1.05 var(--serif);
+  font: 600 13px/1.15 var(--sans); text-transform: uppercase; letter-spacing: 0.04em;
   transform: rotate(-9deg);
   z-index: 2;
   padding: 10px;
@@ -89,7 +88,6 @@
 .lp-head { display: grid; grid-template-columns: 80px 1fr auto; gap: 18px; align-items: baseline; border-top: 1px solid var(--ink); padding-top: 14px; margin-bottom: 34px; }
 .lp-head .n { font: 12px var(--mono); color: var(--muted); }
 .lp-head h2 { font-family: var(--serif); font-size: clamp(32px, 4.4vw, 56px); line-height: 1; letter-spacing: -0.02em; }
-.lp-head h2 em { color: var(--accent); }
 @media (max-width: 600px) { .lp-head { grid-template-columns: 1fr; gap: 6px; } }
 
 /* video yorumlar: dikey şerit */
@@ -98,7 +96,7 @@
 .reel .imgbox { position: absolute; inset: 0; }
 .reel::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.78)); }
 .reel .meta { position: absolute; left: 16px; right: 16px; bottom: 16px; z-index: 1; display: grid; gap: 8px; }
-.reel .meta q { font: italic 22px/1.1 var(--serif); quotes: '“' '”'; }
+.reel .meta q { font: 400 22px/1.1 var(--serif); quotes: '“' '”'; }
 .reel .meta small { font-size: 12px; opacity: 0.8; }
 .reel .pill { position: absolute; top: 14px; left: 14px; z-index: 1; background: rgba(255, 255, 255, 0.92); color: var(--ink); font: 11px var(--mono); padding: 5px 8px; border-radius: 99px; display: flex; gap: 6px; align-items: center; }
 .reel video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 2; }
@@ -163,7 +161,6 @@
 
 .lp-foot { margin-top: clamp(64px, 10vw, 140px); background: var(--ink); color: var(--paper); padding: 56px 0 30px; }
 .lp-foot .big { font: 400 clamp(40px, 7vw, 96px)/0.95 var(--serif); letter-spacing: -0.02em; }
-.lp-foot .big em { color: var(--accent); filter: brightness(1.35); }
 .lp-foot .meta { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px; margin-top: 48px; font: 12px var(--mono); color: #a7a090; }
 .lp-foot .btn { background: var(--paper); color: var(--ink); border-color: var(--paper); }
 
@@ -208,7 +205,6 @@
 
 .success { max-width: 760px; margin: 0 auto; padding: 48px var(--gut, 16px) 80px; }
 .success h1 { font: 400 clamp(40px, 6vw, 72px)/0.95 var(--serif); margin: 18px 0; }
-.success h1 em { color: var(--accent); }
 .inv { background: #fffdf7; border-radius: 6px; padding: 24px; font: 13px/1.6 var(--mono); box-shadow: var(--shadow); margin-top: 28px; }
 .inv .r { display: flex; justify-content: space-between; gap: 12px; }
 .inv .dash { border-top: 1.5px dashed var(--line); margin: 12px 0; }

@@ -56,7 +56,7 @@ export function AdminDashboard() {
 
   return (
     <>
-      <PageHead kicker="Yönetim" title={<>Genel bakış <em>· son 30 gün</em></>}>
+      <PageHead kicker="Yönetim" title={<>Genel bakış · son 30 gün</>}>
         <BrandFilter value={brand} onChange={setBrand} />
       </PageHead>
 
@@ -231,7 +231,7 @@ export function AdminBrands() {
         landing: {
           ...base.landing,
           eyebrow: 'Yeni program',
-          headline: `${name} ile *yeni* bir başlangıç.`,
+          headline: `${name} ile yeni bir başlangıç.`,
           subheadline: 'Bu metni yönetim panelinden düzenleyebilirsin.',
           stats: [],
           videoTestimonials: [],

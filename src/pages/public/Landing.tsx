@@ -107,7 +107,7 @@ export function LandingView({ brand, packages, courses, embedded }: { brand: Bra
             <div className="lp-head">
               <span className="n">{num()}</span>
               <h2>
-                Onlar <em>anlatsın.</em>
+                Onlar anlatsın.
               </h2>
               <span className="label">{L.videoTestimonials.length} video</span>
             </div>
@@ -141,7 +141,7 @@ export function LandingView({ brand, packages, courses, embedded }: { brand: Bra
             <div className="lp-head">
               <span className="n">{num()}</span>
               <h2>
-                Yazdıkları, <em>olduğu gibi.</em>
+                Yazdıkları, olduğu gibi.
               </h2>
               <span className="label">düzenlenmemiş</span>
             </div>
@@ -167,7 +167,7 @@ export function LandingView({ brand, packages, courses, embedded }: { brand: Bra
           <div className="lp-head">
             <span className="n">{num()}</span>
             <h2>
-              Ne <em>alıyorsun?</em>
+              Ne alıyorsun?
             </h2>
             <span className="label">tek seferlik ödeme</span>
           </div>
@@ -243,7 +243,7 @@ export function LandingView({ brand, packages, courses, embedded }: { brand: Bra
             <div className="lp-head">
               <span className="n">{num()}</span>
               <h2>
-                Sıkça <em>sorulanlar</em>
+                Sıkça sorulanlar
               </h2>
               <span className="label">{L.faq.length} soru</span>
             </div>
