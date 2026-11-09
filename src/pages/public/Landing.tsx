@@ -37,16 +37,10 @@ export function LandingView({ brand, packages, courses, embedded }: { brand: Bra
 
   return (
     <div className="lp" style={brandStyle(brand)}>
-      {!embedded && (
-        <div className="lp-preview-bar">
-          <span>
-            Demo · bu sayfa canlıda <b>{brand.domain}</b> alan adında açılır{!brand.active && ' · marka yayında değil'}
-          </span>
-          <span className="row" style={{ gap: 14 }}>
-            <Link to={`/yonetim/markalar/${brand.id}`}>Panelde düzenle →</Link>
-            <Link to="/">Kurss ana menü</Link>
-          </span>
-        </div>
+      {!embedded && me?.role === 'admin' && (
+        <Link to={`/yonetim/markalar/${brand.id}`} className="lp-edit">
+          <Icon name="edit" size={14} /> Bu sayfayı düzenle
+        </Link>
       )}
 
       <div className="lp-wrap">

@@ -24,9 +24,9 @@ export default function Checkout() {
     company: '',
     taxNo: '',
     taxOffice: '',
-    card: '4355 0843 5508 4358',
-    exp: '12/28',
-    cvc: '000',
+    card: '',
+    exp: '',
+    cvc: '',
     agree: false,
   })
   const set = (k: keyof typeof f) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
@@ -116,14 +116,14 @@ export default function Checkout() {
               <h3><i>3</i> Ödeme</h3>
               <div className="paytr">
                 <div className="bar">
-                  <span>PayTR · iFrame API (sandbox)</span>
+                  <span>PayTR güvenli ödeme</span>
                   <span className="row" style={{ gap: 6 }}><Icon name="lock" size={12} /> 3D Secure</span>
                 </div>
                 <div className="body">
-                  <label className="field"><span>Kart numarası</span><input className="input mono" style={{ fontSize: 14 }} value={f.card} onChange={set('card')} /></label>
+                  <label className="field"><span>Kart numarası</span><input className="input mono" style={{ fontSize: 14 }} required inputMode="numeric" autoComplete="cc-number" placeholder="0000 0000 0000 0000" value={f.card} onChange={set('card')} /></label>
                   <div className="grid2">
-                    <label className="field"><span>Son kullanma</span><input className="input mono" style={{ fontSize: 14 }} value={f.exp} onChange={set('exp')} /></label>
-                    <label className="field"><span>CVC</span><input className="input mono" style={{ fontSize: 14 }} value={f.cvc} onChange={set('cvc')} /></label>
+                    <label className="field"><span>Son kullanma</span><input className="input mono" style={{ fontSize: 14 }} required placeholder="AA/YY" autoComplete="cc-exp" value={f.exp} onChange={set('exp')} /></label>
+                    <label className="field"><span>CVC</span><input className="input mono" style={{ fontSize: 14 }} required placeholder="CVC" maxLength={4} autoComplete="cc-csc" value={f.cvc} onChange={set('cvc')} /></label>
                   </div>
                   {instOptions.length > 1 && (
                     <div className="inst">
@@ -136,7 +136,6 @@ export default function Checkout() {
                       ))}
                     </div>
                   )}
-                  <small className="muted">Test: sonu <b>0000</b> ile biten kart reddedilir, diğerleri onaylanır.</small>
                 </div>
               </div>
               <label className="check">
@@ -214,7 +213,7 @@ export function CheckoutSuccess() {
           <div className="r"><span>KDV %20</span><span>{tl(order.amount - order.amount / 1.2)}</span></div>
           <div className="r" style={{ fontSize: 15 }}><b>TOPLAM</b><b>{tl(order.amount)}</b></div>
           <div className="dash" />
-          <div className="muted" style={{ fontSize: 11.5 }}>GİB e-Arşiv entegratörü üzerinden {fmtDate(order.createdAt, true)} tarihinde düzenlendi.</div>
+          <div className="muted" style={{ fontSize: 11.5 }}>GİB e-Arşiv sistemi üzerinden {fmtDate(order.createdAt, true)} tarihinde düzenlendi.</div>
         </div>
       </div>
     </div>

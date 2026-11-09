@@ -212,3 +212,21 @@
 .inv { background: #fffdf7; border-radius: 6px; padding: 24px; font: 13px/1.6 var(--mono); box-shadow: var(--shadow); margin-top: 28px; }
 .inv .r { display: flex; justify-content: space-between; gap: 12px; }
 .inv .dash { border-top: 1.5px dashed var(--line); margin: 12px 0; }
+
+.lp-edit {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 30;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 99px;
+  padding: 10px 16px;
+  font-size: 13px;
+  text-decoration: none;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  box-shadow: var(--shadow);
+}
+@media (max-width: 720px) { .lp-edit { bottom: 84px; } }

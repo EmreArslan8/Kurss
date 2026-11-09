@@ -12,7 +12,7 @@ npm run dev      # http://localhost:5173
 npm run build    # dist/ (SPA — vercel.json rewrite hazır)
 ```
 
-Ana sayfadaki demo hesaplara tıklayarak her panele tek tıkla girebilirsin. "Demo verisini sıfırla" ile başlangıç verisine dönülür.
+Ana sayfa öğrenciye yönelik çatı sitedir. Panellere `/giris` → "Test hesapları" ile girilir (şifre kontrolü yok). Ödemede sonu `0000` ile biten kart reddedilir, diğer kartlar onaylanır.
 
 ## İlandaki maddelerin karşılığı
 

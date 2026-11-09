@@ -15,7 +15,7 @@ export default function Login() {
     login(u.id)
     nav(u.role === 'admin' ? '/yonetim' : u.role === 'teacher' ? '/egitmen' : '/ogrenci')
   }
-  const quick = ['u_s1', 'u_t1', 'u_admin'].map((id) => state.users.find((u) => u.id === id)!)
+  const quick = ['u_s1', 'u_t1', 'u_t2', 'u_admin'].map((id) => state.users.find((u) => u.id === id)!)
   return (
     <div className="login">
       <form className="card pad" onSubmit={submit} style={{ display: 'grid', gap: 18, width: 'min(420px, 100%)' }}>
@@ -29,17 +29,19 @@ export default function Login() {
         </label>
         <label className="field">
           <span>Şifre</span>
-          <input className="input" type="password" defaultValue="demo1234" />
+          <input className="input" type="password" placeholder="••••••••" />
         </label>
         {err && <span className="tag bad">{err}</span>}
         <button className="btn block lg">Devam</button>
-        <hr className="hr" />
-        <span className="label">Demo hesaplar</span>
+        <Link to="/" className="muted" style={{ fontSize: 13, justifySelf: 'center' }}>Şifremi unuttum</Link>
+        <details className="testacc">
+          <summary className="label">Test hesapları</summary>
         {quick.map((u) => (
           <button type="button" key={u.id} className="btn ghost block" style={{ justifyContent: 'flex-start' }} onClick={() => setEmail(u.email)}>
             <Avatar src={u.avatar} name={u.name} size={22} /> {u.name} <span className="muted mono" style={{ marginLeft: 'auto' }}>{u.role}</span>
           </button>
         ))}
+        </details>
       </form>
     </div>
   )
